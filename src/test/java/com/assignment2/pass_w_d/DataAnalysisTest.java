@@ -26,27 +26,22 @@ public class DataAnalysisTest {
 		ArrayList<String> values = new ArrayList<String>();
 		
 		
-		values.addAll(Arrays.asList("Game", "Rafael", "Silva", "M", "30", "Fortaleza"));
-		assertEquals("The result should be 'The first name is smaller or equals in size to the last name and the participant is 30 or younger'", 
-				dataAnalysis.getResultStringNamesAndAge(values), "The first name is smaller or equals in size to the last name and the participant is 30 or younger");
-		
-		values.set(1, "Rafae"); 
-		values.set(4, "31");
+		values.addAll(Arrays.asList("Game", "Rafae", "Silval", "M", "30", "Fortaleza"));
 		assertEquals("The result should be 'The first name is smaller or equals in size to the last name and the participant is 30 or younger'", 
 				dataAnalysis.getResultStringNamesAndAge(values), "The first name is smaller or equals in size to the last name and the participant is 30 or younger");
 		
 		values.clear();
-		values.addAll(Arrays.asList("Game", "Rafae", "Silval", "M", "31", "Fortaleza"));
+		values.addAll(Arrays.asList("Game", "Rafael", "Silva", "M", "31", "Fortaleza"));
 		assertEquals("The result should be 'The first name is greater or equals in size to the last name and the participant older than 30'", 
 				dataAnalysis.getResultStringNamesAndAge(values), "The first name is greater or equals in size to the last name and the participant older than 30");
 		
 		values.clear();
-		values.addAll(Arrays.asList("Game", "Rafael", "Silva", "M", "31", "Fortaleza"));
+		values.addAll(Arrays.asList("Game", "Rafael", "Silva", "M", "30", "Fortaleza"));
 		assertEquals("The result should be 'No analysis was performed'", 
 				dataAnalysis.getResultStringNamesAndAge(values), "No analysis was performed");
 		
 		values.clear();
-		values.addAll(Arrays.asList("Game", "Rafae", "Silval", "M", "30", "Fortaleza"));
+		values.addAll(Arrays.asList("Game", "Rafae", "Silval", "M", "31", "Fortaleza"));
 		assertEquals("The result should be 'No analysis was performed'", 
 				dataAnalysis.getResultStringNamesAndAge(values), "No analysis was performed");
 	}
