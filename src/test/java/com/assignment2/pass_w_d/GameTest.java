@@ -2,9 +2,43 @@ package com.assignment2.pass_w_d;
 
 import static org.junit.Assert.assertEquals;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 import org.junit.Test;
 
 public class GameTest {
+	
+	@Test
+	public void testRun() {
+		Game game = new Game();
+		ArrayList<String> arrayOfInputs = new ArrayList<String>();
+		arrayOfInputs.addAll(Arrays.asList("Game", "FirstName", "LastName", "G", "25", "TheMoon"));
+		game.run(arrayOfInputs);
+		//Lots of Domain Tests
+	}
+	/*
+	@Test
+	public void testRunGame() {
+		Game game = new Game();
+		game.runGame("Game", "FirstName", "LastName", 'G', 25, "HomeCity");
+	}
+	*/
+	@Test
+	public void testGetGenderFromInputValues() {
+		Game game = new Game();
+		ArrayList<String> arrayOfInputs = new ArrayList<String>();
+		arrayOfInputs.addAll(Arrays.asList("Game", "FirstName", "LastName", "G", "25", "TheMoon"));
+		assertEquals("The result should be 'G'",game.getGenderFromInputValues(arrayOfInputs),'G');
+	}
+	
+	@Test
+	public void testGetAgeFromInputValues() {
+		Game game = new Game();
+		ArrayList<String> arrayOfInputs = new ArrayList<String>();
+		arrayOfInputs.addAll(Arrays.asList("Game", "FirstName", "LastName", "G", "25", "TheMoon"));
+		assertEquals("The result should be '25'",game.getAgeFromInputValues(arrayOfInputs),25);
+	}
 
 	@Test
 	public void testCalculateOutPutBasedOnNames() {
@@ -17,6 +51,7 @@ public class GameTest {
 		assertEquals("The result should be 2", i, 2);
 	}
 
+	@Test
 	public void testCalculateOutPutBasedOnGender() {
 		Game game = new Game();
 		int i = game.calculateOutPutBasedOnGender('M');
@@ -26,7 +61,8 @@ public class GameTest {
 		i = game.calculateOutPutBasedOnGender('P');
 		assertEquals("The result should be 2", i, 2);
 	}
-	
+
+	@Test
 	public void testCalculateOutPutBasedOnAge() {
 		Game game = new Game();
 		int i = game.calculateOutPutBasedOnAge(-10);
@@ -36,7 +72,8 @@ public class GameTest {
 		i = game.calculateOutPutBasedOnAge(30);
 		assertEquals("The result should be 1", i, 1);
 	}
-	
+
+	@Test
 	public void testCalculateOutPutBasedOnHomeCity() {
 		Game game = new Game();
 		int i = game.calculateOutPutBasedOnHomeCity("Amsterdam");

@@ -17,8 +17,8 @@ public class Game {
 	}
 	
 	
-	
-	public ArrayList<String> collectInputData(){/*
+	/*
+	public ArrayList<String> collectInputData(){
 		ArrayList<String> resultArray = new ArrayList<String>();
 		Scanner scanner = new Scanner(System.in);
 		String inputValue = "";
@@ -41,8 +41,9 @@ public class Game {
 		inputValue = scanner.nextLine();
 		resultArray.add(inputValue);
 		
-		return resultArray;*/
+		return resultArray;
 	}
+	*/
 	
 	public char getGenderFromInputValues(ArrayList<String> arrayOfInputs){
 		char genderCharacter = arrayOfInputs.get(3).charAt(0);	
